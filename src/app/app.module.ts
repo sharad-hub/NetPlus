@@ -6,7 +6,9 @@ import { NavComponent } from './nav/nav.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-
+import { AuthService } from './services/auth.service';
+import { ErrorInterceptorProvider } from './infra/ErrorInterceptor';
+import { BsDropdownModule } from 'ngx-bootstrap';
 @NgModule({
    declarations: [
       AppComponent,
@@ -17,9 +19,10 @@ import { RegisterComponent } from './register/register.component';
    imports: [
       BrowserModule,
       FormsModule,
-      HttpClientModule
+      HttpClientModule,
+      BsDropdownModule.forRoot()
    ],
-   providers: [HttpClient],
+   providers: [AuthService, ErrorInterceptorProvider ],
    bootstrap: [
       AppComponent
    ]
