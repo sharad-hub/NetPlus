@@ -1,0 +1,18 @@
+<form #registerForm="ngForm" (ngSubmit)="register()">
+  <h2>Sign up</h2>
+  <hr>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="text" class="form-control"  aria-describedby="emailHelp" [(ngModel)]="model.Username"
+    placeholder="Username" name="username">
+   </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" [(ngModel)]="model.Password"
+    placeholder="Password" name="password">
+  </div>   
+  <div class="form-group text-center">
+  <button type="submit" class="btn btn-success">Register</button>
+  <button type="button" class="btn btn-primary" (click)="cancel()">Cancel</button>
+</div>
+</form>
