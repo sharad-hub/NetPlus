@@ -1,0 +1,55 @@
+<div class="container mt-4 mt-25">
+  <div class="row">
+    <h1>{{user.knownAs}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img src="{{user.photoUrl}}" alt="{{user?.knownAs}}" class="card-img-top img-thumbnail">
+        <div class="card-body">
+          <div>
+            <strong>Location</strong>
+            <p>{{user?.city}}, {{user?.city}}</p>
+          </div>
+          <div>
+            <strong>Age</strong>
+            <p>{{user?.age}}</p>
+          </div>
+          <div>
+            <strong>Last Activity</strong>
+            <p>{{user?.lastActivity}}</p>
+          </div>
+          <div>
+              <strong>Member since</strong>
+              <p>{{user?.created}}</p>
+            </div>
+        </div>
+        <div class="card-footer">
+          <div>
+            <button class="btn btn-primary">Like</button>
+            <button class="btn btn-primary">Messages</button>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+      <tabset class="member-tabset">
+          <tab heading="About {{user?.knownAs}}" id="tab1">
+            <h4>Description</h4>
+          <p>{{user?.introduction}}</p>
+          <h4>Looking For</h4>
+          <p>{{user?.lookingfor}}</p>
+          </tab>
+          <tab heading="Interests" id="tab2">
+            <h4>{{user.interests}}</h4>
+          </tab>  
+          <tab heading="Photos" id="tab3">
+              <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+          </tab>  
+          <tab heading="Messges" id="tab3">
+              <p>Messges ....</p>
+           </tab>              
+      </tabset>
+  </div>
+  </div>
+</div>
